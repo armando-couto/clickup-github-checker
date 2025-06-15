@@ -36,11 +36,16 @@ public class ClickUpService {
         List<String> allTasks = new ArrayList<>();
 
         while (hasMore) {
-            String url = String.format("/team/%s/task?statuses[]=done&space_ids[]=%s&page=%d",
-                    teamId, spaceId, page);
+            final int currentPage = page; // variável imutável usada na lambda
 
             String response = webClient.get()
-                    .uri(url)
+                    .uri(uriBuilder -> uriBuilder
+                            .path("/team/" + teamId + "/task")
+                            .queryParam("statuses[]", "done")
+                            .queryParam("statuses[]", "in production")
+                            .queryParam("space_ids[]", spaceId)
+                            .queryParam("page", currentPage)
+                            .build())
                     .retrieve()
                     .bodyToMono(String.class)
                     .block();
