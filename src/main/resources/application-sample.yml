@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+clickup:
+  token: SEU_CLICKUP_TOKEN
+  team-id: SEU_CLICKUP_TEAM_ID
+  space-id: SEU_SPACE_ID
+
+github:
+  token: SEU_GITHUB_TOKEN
+  org: SUA_ORGANIZACAO
