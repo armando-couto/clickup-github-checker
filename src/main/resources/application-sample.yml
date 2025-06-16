@@ -9,3 +9,6 @@ clickup:
 github:
   token: SEU_GITHUB_TOKEN
   org: SUA_ORGANIZACAO
+
+slack:
+  webhook-url: WEBHOOK-URL
