@@ -19,8 +19,8 @@ public class CheckerJob {
     private final GitHubService gitHubService;
     private final SlackService slackService;
 
-    // Executando verificação de branches (somente de segunda a sexta, a cada hora)
-    @Scheduled(cron = "0 0 * * * MON-FRI")
+    // Executando verificação de branches (somente de segunda a sexta, a cada 6 horas)
+    @Scheduled(cron = "0 0 0/6 * * MON-FRI")
     public void runCheck() {
         log.info("Iniciando verificação de branches abertas...");
 
