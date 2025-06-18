@@ -28,6 +28,9 @@ public class ClickUpService {
         WebClient webClient = WebClient.builder()
                 .baseUrl("https://api.clickup.com/api/v2")
                 .defaultHeader("Authorization", clickupToken)
+                .codecs(configurer -> configurer
+                        .defaultCodecs()
+                        .maxInMemorySize(10 * 1024 * 1024)) // 10 MB
                 .build();
 
         int page = 0;
