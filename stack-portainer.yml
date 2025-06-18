@@ -1,0 +1,8 @@
+version: "3"
+services:
+  robo:
+    container_name: clickup-github-checker
+    image: fixpay/clickup-github-checker:latest
+    ports:
+      - 4884:8080
+    restart: always
