@@ -62,4 +62,21 @@ Pegue a URL gerada, exemplo:
 ```ruby
 https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
 ```
+---
+
+✅ Cenário padrão com Spring Boot:
+
+Se o arquivo application.yml estiver dentro de:
+```yaml
+src/main/resources/application.yml
+```
+→ Durante o build (mvn package), ele é empacotado dentro do .jar.
+
+No container, o application.yml fica embutido dentro do JAR, não como um arquivo solto no sistema de arquivos do container.
+
+✔️ Isso significa que o caminho físico dentro do container não existe como arquivo independente — ele está dentro do JAR, normalmente localizado em:
+```bash
+/app.jar
+```
+O Spring Boot lê diretamente de dentro do próprio .jar.
 

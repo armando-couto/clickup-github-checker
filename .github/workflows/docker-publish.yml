@@ -34,7 +34,7 @@ jobs:
 
       - name: Build and test with Maven
         run: |
-          echo "${{ secrets.ENV_PRODUCTION }}" > src/main/resources/application.yml
+          echo "${{ secrets.ENV_PRODUCTION }}" > application.yml
           mvn clean package
 
         # Workaround: https://github.com/docker/build-push-action/issues/461
