@@ -9,7 +9,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: armando-couto/clickup-github-checker
+  IMAGE_NAME: fixpay/clickup-github-checker
 
 jobs:
   build:
@@ -98,6 +98,6 @@ jobs:
           STACK_NAME: clickup-github-checker
           ENDPOINT: 3
           CONTAINER_NAME: clickup-github-checker
-          tags: armando-couto/clickup-github-checker:latest
+          tags: fixpay/clickup-github-checker:latest
           api_docker: https://deploy.fixpay.com.br:9444/api/endpoints/3/docker
 
